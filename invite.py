@@ -29,6 +29,6 @@ def join_trip(trip, code, user_id):
         raise ValueError("wrong invite code")
     if user_id in trip["members"]:
         raise ValueError("user already in trip")
-    if len(trip["members"]) >= trip["max_members"]:
+    if len(trip["members"]) > trip["max_members"]:
         raise ValueError("trip is full")
     return trip["members"] + [user_id]
